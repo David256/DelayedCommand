@@ -10,7 +10,7 @@ This plugin allows you to tell the server to perform a command after a given amo
 /dcmd seconds command
 
 # Examples
-/dcmd 10 time set day
+/dcmd 10 time set day<br/>
 /dcmd 10 /time set day
 
 # Example use cases
