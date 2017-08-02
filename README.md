@@ -7,7 +7,7 @@ Version: 0.1 Beta
 This plugin allows you to tell the server to perform a command after a given amount of seconds.
 
 # Usage
-/dcmd <seconds> <command>
+/dcmd seconds command
 
 # Examples
 /dcmd 10 time set day
