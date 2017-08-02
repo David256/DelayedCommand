@@ -1,6 +1,6 @@
 # DelayedCommand
-Game: Minecraft 1.12
-Server: Spigot (Bukkit)
+Game: Minecraft 1.12<br/>
+Server: Spigot (Bukkit)<br/>
 Version: 0.1 Beta
 
 # Description
