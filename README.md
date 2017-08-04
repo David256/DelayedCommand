@@ -18,7 +18,7 @@ Example: /dcmd cancel [id]*<br/><br/>
 # Examples
 /dcmd once 10 time set day<br/>
 /dcmd repeat 3 10 /time set day<br/>
-/dcmd infinite 60 time set day
+/dcmd infinite 60 time set day<br/>
 /dcmd cancel 25
 
 # Example use cases
