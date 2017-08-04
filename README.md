@@ -1,7 +1,7 @@
 # DelayedCommand
 Game: Minecraft 1.12<br/>
 Server: Spigot (Bukkit)<br/>
-Version: 0.1 Beta
+Version: 0.2 Beta
 
 # Description
 This plugin allows you to tell the server to perform a command after a given amount of seconds. It's also possible to repeat the command a certain amount of times or have it repeat infinitely.
