@@ -5,13 +5,18 @@ main: netherlands.bjorn.delayedcommand.Main
 commands:
   dcmd:
     description: Perform a command after x amount of seconds
-    usage: Syntax error! Try /dcmd seconds command Eg /dcmd 10 time set day
+    usage: |
+       /<command> [once/repeat/infinite/cancel] [...]
+       Example: /<command> once [seconds] [command]
+       Example: /<command> repeat [how many times] [seconds] [command]
+       Example: /<command> infinite [seconds] [command]
+       Example: /<command> cancel [id]
     permission: delayedcommand.dcmd
 permissions:
    delayedcommand.*:
      description: Allowes access to all DelayedCommand commands
      children:
-       delayedcommand.dcmd: op
+       delayedcommand.dcmd: true
      delayedcommand.dcmd:
-       description: Makes the server perform a command after x amount of seconds
+       description: Makes the server perform a command after x amount of seconds or repeat it as many times as you want up to infinity
        default: op
