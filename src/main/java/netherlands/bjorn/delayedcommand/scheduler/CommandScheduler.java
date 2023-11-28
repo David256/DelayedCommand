@@ -1,8 +1,5 @@
 package netherlands.bjorn.delayedcommand.scheduler;
 
-import netherlands.bjorn.delayedcommand.Main;
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 import javax.annotation.Nullable;
