@@ -38,6 +38,17 @@ public class CommandScheduler {
         this.cancelled = cancelled;
     }
 
+    @Override
+    public String toString() {
+        return "CommandScheduler{" +
+                "id=" + id +
+                ", times=" + times +
+                ", seconds=" + seconds +
+                ", cmd='" + cmd + '\'' +
+                ", cancelled=" + cancelled +
+                '}';
+    }
+
     public int getId() {
         return id;
     }
