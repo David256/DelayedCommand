@@ -3,6 +3,7 @@ package netherlands.bjorn.delayedcommand.scheduler;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class CommandScheduler {
     private int id;
@@ -75,7 +76,7 @@ public class CommandScheduler {
     }
 
     @NonNull
-    public static CommandScheduler parse(String rawCmd) {
+    public static CommandScheduler parse(List<String> rawCmds) {
         return new CommandScheduler();
     }
 }
