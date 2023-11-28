@@ -19,6 +19,7 @@ class CommandSchedulerTest {
 
         assertEquals(scheduler.getTimes(), 1);
         assertEquals(scheduler.getSeconds(), 10);
+        assertEquals(scheduler.getTicks(), 200);
         assertEquals(scheduler.getCmd(), "time set day");
         assertFalse(scheduler.isCancelled());
     }
@@ -32,6 +33,7 @@ class CommandSchedulerTest {
 
         assertEquals(scheduler.getTimes(), 3);
         assertEquals(scheduler.getSeconds(), 10);
+        assertEquals(scheduler.getTicks(), 200);
         assertEquals(scheduler.getCmd(), "time set night");
         assertFalse(scheduler.isCancelled());
     }
@@ -45,6 +47,7 @@ class CommandSchedulerTest {
 
         assertEquals(scheduler.getTimes(), -1);
         assertEquals(scheduler.getSeconds(), 60);
+        assertEquals(scheduler.getTicks(), 1200);
         assertEquals(scheduler.getCmd(), "weather rain");
         assertFalse(scheduler.isCancelled());
     }
@@ -58,6 +61,7 @@ class CommandSchedulerTest {
 
         assertEquals(scheduler.getTimes(), 0);
         assertEquals(scheduler.getSeconds(), 0);
+        assertEquals(scheduler.getTicks(), 0);
         assertNull(scheduler.getCmd());
         assertEquals(scheduler.getId(), 25);
     }

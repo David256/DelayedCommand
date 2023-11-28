@@ -155,4 +155,8 @@ public class CommandScheduler {
 
         return new CommandScheduler(times, seconds, cmd);
     }
+
+    public int getTicks() {
+        return seconds * 20;
+    }
 }
