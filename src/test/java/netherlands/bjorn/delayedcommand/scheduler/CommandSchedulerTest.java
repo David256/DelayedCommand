@@ -12,7 +12,7 @@ class CommandSchedulerTest {
 
     @DisplayName("call once")
     @Test
-    void testCallOnce() {
+    void testCallOnce() throws CommandSchedulerException {
         CommandScheduler scheduler = CommandScheduler.parse(
                 List.of("once 10 time set day".split(" "))
         );
@@ -25,7 +25,7 @@ class CommandSchedulerTest {
 
     @DisplayName("call repeat")
     @Test
-    void testCallRepeat() {
+    void testCallRepeat() throws CommandSchedulerException {
         CommandScheduler scheduler = CommandScheduler.parse(
                 List.of("repeat 3 10 /time set night".split(" "))
         );
@@ -38,7 +38,7 @@ class CommandSchedulerTest {
 
     @DisplayName("call infinite")
     @Test
-    void testCallInfinite() {
+    void testCallInfinite() throws CommandSchedulerException {
         CommandScheduler scheduler = CommandScheduler.parse(
                 List.of("infinite 60 weather rain".split(" "))
         );
@@ -51,7 +51,7 @@ class CommandSchedulerTest {
 
     @DisplayName("call cancel")
     @Test
-    void testCallCancel() {
+    void testCallCancel() throws CommandSchedulerException {
         CommandScheduler scheduler = CommandScheduler.parse(
                 List.of("cancel 25".split(" "))
         );
