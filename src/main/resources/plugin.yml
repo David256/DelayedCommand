@@ -14,7 +14,7 @@ commands:
     permission: delayedcommand.dcmd
 permissions:
   delayedcommand.*:
-    description: Allowes access to all DelayedCommand commands
+    description: Allows access to all DelayedCommand commands
     children:
       delayedcommand.dcmd: true
     delayedcommand.dcmd:
