@@ -19,11 +19,12 @@ import java.util.logging.Logger;
 
 public class CommandDCMD implements CommandExecutor, TabCompleter {
     public static String COMMAND_NAME = "dcmd";
-
     private final Main plugin;
+    private int lastTaskId;
 
     public CommandDCMD(Main plugin) {
         this.plugin = plugin;
+        this.lastTaskId = 0;
     }
 
     public void autoRegister() {
@@ -57,6 +58,7 @@ public class CommandDCMD implements CommandExecutor, TabCompleter {
             logger.info("will cancel task with id: " + scheduler.getId());
 
             Bukkit.getScheduler().cancelTask(scheduler.getId());
+            lastTaskId = 0;
 
             sender.sendMessage(ChatColor.AQUA + "Command with id " + ChatColor.YELLOW + scheduler.getId() + ChatColor.AQUA + " successfully canceled.");
             return true;
@@ -76,6 +78,7 @@ public class CommandDCMD implements CommandExecutor, TabCompleter {
         }
 
         sender.sendMessage(ChatColor.GOLD + "Cancel this command with /dcmd cancel " + task.getTaskId());
+        lastTaskId = task.getTaskId();
         return true;
     }
 
@@ -91,6 +94,9 @@ public class CommandDCMD implements CommandExecutor, TabCompleter {
         } else if (args.length == 2) {
             if (args[0].equals("cancel")) {
                 hints.add("<id>");
+                if (lastTaskId > 0) {
+                    hints.add(Integer.toString(lastTaskId));
+                }
             } else if (args[0].equals("repeat")) {
                 hints.add("<times>");
             } else {
