@@ -6,6 +6,7 @@ import netherlands.bjorn.delayedcommand.tasks.TaskInfinite;
 import netherlands.bjorn.delayedcommand.tasks.TaskRepeat;
 import netherlands.bjorn.delayedcommand.tasks.TaskSingle;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.*;
 import org.bukkit.scheduler.BukkitTask;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -45,7 +46,7 @@ public class CommandDCMD implements CommandExecutor, TabCompleter {
         try {
             scheduler = CommandScheduler.parse(List.of(args));
         } catch (CommandSchedulerException e) {
-            sender.sendMessage(e.getMessage());
+            sender.sendMessage(ChatColor.RED + e.getMessage());
             plugin.getLogger().warning("Bad command: " + e.getRawCmd());
             return false;
         }
@@ -57,7 +58,7 @@ public class CommandDCMD implements CommandExecutor, TabCompleter {
 
             Bukkit.getScheduler().cancelTask(scheduler.getId());
 
-            sender.sendMessage("Command with id " + scheduler.getId() + " successfully canceled.");
+            sender.sendMessage(ChatColor.AQUA + "Command with id " + ChatColor.YELLOW + scheduler.getId() + ChatColor.AQUA + " successfully canceled.");
             return true;
         }
 
@@ -74,7 +75,7 @@ public class CommandDCMD implements CommandExecutor, TabCompleter {
             task = new TaskRepeat(this.plugin, times, cmd).runTaskTimer(plugin, ticks, ticks);
         }
 
-        sender.sendMessage("Cancel this command with /dcmd cancel " + task.getTaskId());
+        sender.sendMessage(ChatColor.GOLD + "Cancel this command with /dcmd cancel " + task.getTaskId());
         return true;
     }
 
