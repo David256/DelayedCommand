@@ -5,7 +5,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
     @Override
     public void onEnable(){
-        this.getCommand("dcmd").setExecutor(new CommandDCMD(this));
+        CommandDCMD dcmd = new CommandDCMD(this);
+
+        dcmd.autoRegister();
     }
 
     @Override

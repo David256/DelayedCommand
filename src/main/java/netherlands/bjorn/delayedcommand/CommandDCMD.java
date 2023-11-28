@@ -6,19 +6,15 @@ import netherlands.bjorn.delayedcommand.tasks.TaskInfinite;
 import netherlands.bjorn.delayedcommand.tasks.TaskRepeat;
 import netherlands.bjorn.delayedcommand.tasks.TaskSingle;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
+import org.bukkit.command.*;
 import org.bukkit.scheduler.BukkitTask;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
-
-import static org.bukkit.Bukkit.getServer;
 
 public class CommandDCMD implements CommandExecutor, TabCompleter {
     public static String COMMAND_NAME = "dcmd";
@@ -27,6 +23,13 @@ public class CommandDCMD implements CommandExecutor, TabCompleter {
 
     public CommandDCMD(Main plugin) {
         this.plugin = plugin;
+    }
+
+    public void autoRegister() {
+        PluginCommand pluginCommand = Objects.requireNonNull(plugin.getCommand(CommandDCMD.COMMAND_NAME));
+
+        pluginCommand.setExecutor(this);
+        pluginCommand.setTabCompleter(this);
     }
 
     @Override
