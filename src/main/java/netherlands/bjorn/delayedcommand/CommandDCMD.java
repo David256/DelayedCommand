@@ -1,5 +1,8 @@
 package netherlands.bjorn.delayedcommand;
 
+import netherlands.bjorn.delayedcommand.tasks.TaskInfinite;
+import netherlands.bjorn.delayedcommand.tasks.TaskRepeat;
+import netherlands.bjorn.delayedcommand.tasks.TaskSingle;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,11 +15,11 @@ import java.util.Objects;
 
 import static org.bukkit.Bukkit.getServer;
 
-public class CommandDcmd implements CommandExecutor {
+public class CommandDCMD implements CommandExecutor {
 
     private final Main plugin;
 
-    public CommandDcmd(Main plugin) {
+    public CommandDCMD(Main plugin) {
         this.plugin = plugin;
     }
 
