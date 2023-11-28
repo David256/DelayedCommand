@@ -1,4 +1,4 @@
-package netherlands.bjorn.delayedcommand;
+package netherlands.bjorn.delayedcommand.tasks;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
